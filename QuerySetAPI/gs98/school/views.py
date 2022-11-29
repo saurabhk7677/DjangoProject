@@ -1,0 +1,40 @@
+from django.shortcuts import render
+from .models import Student
+from datetime import date, time
+# Create your views here.
+def home(request):
+    #student_data = Student.objects.all()
+    #student_data = Student.objects.filter(name__exact='bunty')
+    #student_data = Student.objects.filter(name__iexact='ranjeet')
+    #student_data = Student.objects.filter(name__contains='shyam')
+    #student_data = Student.objects.filter(name__icontains='ram')
+    #student_data = Student.objects.filter(id__in=[1,4,8])
+    #student_data = Student.objects.filter(marks__gt=50)
+    #student_data = Student.objects.filter(marks__gte=80)
+    #student_data = Student.objects.filter(marks__lt=75)
+    #student_data = Student.objects.filter(marks__lte=75)
+    #student_data = Student.objects.filter(name__startswith='r')
+    #student_data = Student.objects.filter(name__istartswith='s')
+    #student_data = Student.objects.filter(name__endswith='h')
+    #student_data = Student.objects.filter(name__iendswith='T')
+    #student_data = Student.objects.filter(passdate__range=('2022-05-01','2022-11-01'))
+    #student_data = Student.objects.filter(admdatetime__date=date(2022,2,12))
+    #student_data = Student.objects.filter(admdatetime__date__gt=date(2022,2,12))
+    #student_data = Student.objects.filter(admdatetime__date__gte=date(2022,2,12))
+    #student_data = Student.objects.filter(passdate__year=2022)
+    #student_data = Student.objects.filter(passdate__month=2)
+    #student_data = Student.objects.filter(passdate__day=12)
+    #student_data = Student.objects.filter(passdate__week=2)
+    #student_data = Student.objects.filter(passdate__week_day=2)
+    #student_data = Student.objects.filter(passdate__quarter=2)
+    #student_data = Student.objects.filter(admdatetime__time=time(6,00))
+    #student_data = Student.objects.filter(admdatetime__hour=2)
+    #student_data = Student.objects.filter(admdatetime__minute=34)
+    #student_data = Student.objects.filter(admdatetime__second=20)
+    student_data = Student.objects.filter(roll__isnull=False)
+
+
+    print("Return: ", student_data)
+    print()
+    print("SQL Query: ", student_data.query)
+    return render(request, 'school/home.html', {'students': student_data})

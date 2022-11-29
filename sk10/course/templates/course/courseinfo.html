@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Django{% endblock title %}
+
+{% block content %}
+<style>
+    body{
+        background-color:violet;
+    }
+</style>
+<h2>This is a Django Course page</h2>
+{% include 'core/topcourse.html' with p='PHP' %}
+{% endblock content %}

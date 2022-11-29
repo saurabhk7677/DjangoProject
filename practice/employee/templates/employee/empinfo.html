@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <style>
+        table th, tr, td {
+            border: 1px solid black
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Information</h1>
+    <table>
+        <th>Name</th>
+        <th>City</th>
+        <th>Company</th>
+        <th>Salary</th>
+        <th>Bank</th>
+        {% for employee in emp %}
+        <tr>
+            <td>{{employee.name}}</td>
+            <td>{{employee.city}}</td>
+            <td>{{employee.company}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.bank}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

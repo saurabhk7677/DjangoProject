@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        TH,TD{
+            background-color:orange;
+            border: 1px rgb(248, 243, 243) solid;
+        }
+    </style>
+</head>
+<body>
+<h1>Custmor Page</h1>
+{% if cust %}
+<h1>Show Data</h1>
+<h3>{{cust}}</h3>
+<table>
+    <tr>
+        <th>custid</th>
+        <th>custname</th>
+        <th>custemail</th>
+        <th>custpass</th>
+        <th>custbill</th>
+    </tr>
+    {% for cst in cust %}
+    <TR>
+        <TD>{{cst.custid}}</TD>
+        <TD>{{cst.custname}}</TD>
+        <TD>{{cst.custemail}}</TD>
+        <TD>{{cst.custpass}}</TD>
+        <TD>{{cst.custbill}}</TD>
+    </TR>
+    {% endfor %}
+</table>
+{% else %}
+<h1>No Data</h1>
+{% endif %}
+</body>
+</html>
